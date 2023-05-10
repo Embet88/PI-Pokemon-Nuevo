@@ -6,6 +6,7 @@ const initialState = {
   team: [],
 };
 
+// funciones de back
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
     case "GET_TYPE":

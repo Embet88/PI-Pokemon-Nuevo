@@ -63,8 +63,4 @@ export const add = (pokemon) => (dispatch) => {
   });
 };
 
-export const deleteTeam = () => {
-  return {
-    type: "DELETE_TEAM",
-  };
-};
+

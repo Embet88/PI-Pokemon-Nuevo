@@ -11,6 +11,8 @@ import { Pokemon } from "./components/Pokemon/Pokemon";
 import { Team } from "./Pages/Team/Team";
 import axios from 'axios';
 import { useLocation} from "react-router-dom";
+
+
 axios.defaults.baseURL = "http://localhost:3001";
 
 function App() {
@@ -43,6 +45,7 @@ function App() {
       <Route exact path="/team">
         <Team />
       </Route>
+      
     </>
   );
 }

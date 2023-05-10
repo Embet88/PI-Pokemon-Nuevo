@@ -13,9 +13,11 @@ export const LandingPage = () => {
   return (
     <div>
       <div>
-      <video className={style.video} autoPlay loop muted>
-            <source src={video} type="video/mp4"></source>
-          </video>
+        {/* se coloca un video de fondo de la pagina */}
+        <video className={style.video} autoPlay loop muted>
+          <source src={video} type="video/mp4"></source>
+        </video>
+        {/* //se hace click en el bton star y se redirige al home de la pagina */}
         <Link to="/home">
           <button className={style.startButton} onClick={handleStartClick}>
             Start

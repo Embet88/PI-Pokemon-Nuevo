@@ -4,10 +4,9 @@
   background-size: cover;
   height: 100vh;
   padding-top: 100px;
-  align-items:center;
+  align-items: center;
   text-align: center;
   color: white;
-  
 }
 
 .container .pokebola {
@@ -17,28 +16,24 @@
 }
 
 .pokebola button {
-    background: none;
-    border: 0;
-    cursor: pointer;
+  background: none;
+  border: 0;
+  cursor: pointer;
 }
 
-
 .container h1 {
-  
   font-weight: 800;
   font-size: 3.5em;
   text-transform: uppercase;
 }
 
 .container h2 {
-  
   letter-spacing: 10px;
   font-size: 2em;
   margin-right: 20px;
 }
 
 .ima {
-  
   display: flex;
   justify-content: space-evenly;
   margin: 3% 10% 0 1%;
@@ -46,26 +41,23 @@
   padding-top: 3%;
 }
 
-.imagenfondo{
-  
+.imagenfondo {
   align-items: center;
   justify-content: center;
-  
+
   width: 30%;
 }
 
-.stats{
-  
+.stats {
   display: flex;
-  margin-top:3%;
+  margin-top: 3%;
   justify-content: left;
   height: 20%;
-  margin-left: -45%;  
+  margin-left: -45%;
   width: fit-content;
 }
 
 .parrafo {
-  
   padding-top: 5%;
   margin-right: -10%;
   margin-left: -20%;
@@ -73,16 +65,13 @@
 }
 
 meter {
-  
   width: 200%;
   height: 50%;
   display: flex;
   justify-content: left;
-  
 }
-.meter2{
-  margin:0%;
-  
+.meter2 {
+  margin: 0%;
 }
 p {
   font-weight: 500;
@@ -98,12 +87,11 @@ p span {
   display: flex;
   justify-content: space-around;
   margin-top: 10%;
-  
 }
 
 .type .grass {
   width: 38%;
-  
+
   border-radius: 20px;
   background: linear-gradient(
     140deg,
@@ -268,4 +256,3 @@ p span {
   border-radius: 20px;
   background: linear-gradient(110deg, #a34027 0%, #fb6537 100%);
 }
-

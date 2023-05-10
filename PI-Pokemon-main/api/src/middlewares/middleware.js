@@ -2,7 +2,7 @@ const fetch = require("node-fetch");
 const { Pokemon, Tipo } = require("../db.js");
 
 const info = async (by) => {
-  const api = await fetch("https://pokeapi.co/api/v2/pokemon?limit=100");
+  const api = await fetch("https://pokeapi.co/api/v2/pokemon?limit=40");
   const data = await api.json();
   const bd = await Pokemon.findAll({ include: Tipo });
 
@@ -28,6 +28,7 @@ const info = async (by) => {
         img: info.sprites.versions["generation-v"]["black-white"].animated
           .front_default,
         fuerza: info.stats[1].base_stat,
+        
       });
     } else {
       pokemonInfo.push({
@@ -36,6 +37,7 @@ const info = async (by) => {
         name: base[i].name,
         type: base[i].tipos.map((t) => t.name),
         fuerza: base[i].fuerza,
+        
         img: "https://media.giphy.com/media/DRfu7BT8ZK1uo/giphy.gif",
       });
     }

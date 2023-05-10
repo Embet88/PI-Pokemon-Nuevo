@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPokemons } from "../../actions";
 import style from "./form.module.css";
-import axios from 'axios';
+import axios from "axios";
 
 export const Form = () => {
   const dispatch = useDispatch();
   const options = useSelector((store) => store.types);
 
+  //  la función validate para comprobar si el campo name es válido y se actualizan los estados data y errors
   const validate = (input) => {
     let errors = {};
     if (!input.name) {
@@ -30,6 +31,8 @@ export const Form = () => {
 
   const [errors, setErrors] = useState({});
 
+  //se encarga de actualizar el estado del formulario cuando cambia el valor de algún campo de entrada. Si el campo que cambió no es name, 
+  //entonces se convierte el valor a un número
   const handleInputChange = (e) => {
     if (e.target.name !== "name") {
       setData({
@@ -64,7 +67,7 @@ export const Form = () => {
       });
     }
   };
-
+  const [showMessage, setShowMessage] = useState(false);
   const submit = async (e) => {
     e.preventDefault();
     const crear = await axios.post("/pokemons", data, {
@@ -77,7 +80,7 @@ export const Form = () => {
     });
     dispatch(getPokemons());
     const respuesta = crear.data;
-    console.log(respuesta);
+
     setData({
       name: "",
       vida: 0,
@@ -88,13 +91,18 @@ export const Form = () => {
       peso: 0,
       tipos: [],
     });
+
+    setShowMessage(true);
+    setTimeout(() => {
+      setShowMessage(false);
+    }, 3000);
   };
 
   return (
     <div className={style.containerCreate}>
       <form action="POST" className={style.form} onSubmit={submit}>
         <div className={style.separado}>
-          <h1>Crea tu propio Pokemon</h1>
+          <h1>Nombre del nuevo Pokemon</h1>
           <p className={errors.name ? style.danger : style.question}>
             <label>Pokemon name</label>
             <input
@@ -183,6 +191,9 @@ export const Form = () => {
           </div>
         </div>
       </form>
+      {showMessage && (
+        <div className={style.submit}>Pokemon creado exitosamente!</div>
+      )}
     </div>
   );
 };

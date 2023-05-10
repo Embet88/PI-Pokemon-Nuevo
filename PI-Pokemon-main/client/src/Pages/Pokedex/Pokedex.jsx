@@ -15,45 +15,45 @@ export const Pokedex = () => {
 
   const [page, setPage] = useState(0);
 
+  //comprueba si la longitud es mayor de 0 y obtiene +9 pokemons por pagina
   const pagination = () => {
-    if (pokemons.length) return pokemons.slice(page, page + 10);
+    if (pokemons.length) return pokemons.slice(page, page + 9);
     if (pokemons.info) return pokemons;
     return [];
   };
 
   const array = pagination();
-
+  // si la longitud de pokemones supera los 9 pokemones muestra otros 9 pokes en la siguiente pag
   const nextPage = () => {
-    if (pokemons.length > page + 10) {
-      setPage(page + 10);
+    if (pokemons.length > page + 9) {
+      setPage(page + 9);
     }
   };
-
+  //si la pagina es mayor a 0 se restaran 9 pokemones mostrando los 9 anteriores
   const previusPage = () => {
     if (page > 0) {
-      setPage(page - 10);
+      setPage(page - 9);
     }
   };
 
+  // aqui se puede buscar los pokemones con la barra de busqueda y devolver la carta del poke buscado
   return (
     <div className={style.container}>
       <Search />
-      
+
       <Card
         array={array}
-        img={"https://i.gifer.com/DeRD.gif"}
-        
+        img={"https://thumbs.gfycat.com/DampSpanishCleanerwrasse-max-1mb.gif"}
       />
-      
+      {/*Aqui se colocan los botones para navegar entre las paginas de la pokedex  */}
       <div className="botones">
         <button onClick={previusPage} className="pages">
-          &laquo; Previus
+          &laquo; Anterior
         </button>
         <button onClick={nextPage} className="pages">
-          Next &raquo;
+          Siguiente &raquo;
         </button>
       </div>
     </div>
-    
   );
 };

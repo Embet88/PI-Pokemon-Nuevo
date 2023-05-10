@@ -6,6 +6,8 @@ export const tipos = (type, array) => {
 export const ordered = (order, array) => {
   let names = array.map((o) => o.name);
   let fuerza = array.map((o) => o.fuerza);
+  
+  
   let orde = [];
 
   switch (order) {

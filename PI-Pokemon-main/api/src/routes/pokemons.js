@@ -2,6 +2,7 @@ const { Router } = require("express");
 const { Pokemon, Tipo } = require("../db.js");
 const { info, forName, forId } = require("../middlewares/middleware.js");
 
+
 const router = Router();
 
 router.get("/", async (req, res) => {
@@ -61,5 +62,19 @@ router.post("/", async (req, res) => {
   await pokemon.setTipos(tipos);
   res.json({ info: "Pokemon creado" });
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;
